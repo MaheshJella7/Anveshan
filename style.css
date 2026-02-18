@@ -21,7 +21,7 @@ body{
         radial-gradient(circle at center, rgba(255,122,0,0.18), transparent 40%),
         radial-gradient(circle at center, rgba(57,255,20,0.12), transparent 60%),
         linear-gradient(rgba(5,5,7,0.85), rgba(5,5,7,0.95)),
-        url("assets/bg.jpg");
+        url("bg.jpg");
 
     background-size:cover;
     background-position:center;
