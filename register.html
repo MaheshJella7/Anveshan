@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anveshan | Event Registrations</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+    --bg: #070b11;
+    --card: rgba(16, 22, 32, 0.7);
+    --border: rgba(0, 224, 255, 0.25);
+    --accent: #00e0ff;
+    --accent-soft: rgba(0,224,255,0.08);
+    --text: #e6f1ff;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
+}
+
+body{
+    background: radial-gradient(circle at 20% 10%, #0b1320 0%, #070b11 60%);
+    color:var(--text);
+}
+
+/* container */
+
+.container{
+    max-width:1000px;
+    margin:auto;
+    padding:60px 20px 80px;
+}
+
+/* heading */
+
+.title{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.title h1{
+    font-size:48px;
+    font-weight:600;
+    letter-spacing:1px;
+}
+
+.title p{
+    opacity:.7;
+    margin-top:10px;
+}
+
+/* section */
+
+.section{
+    margin-top:60px;
+}
+
+.section h2{
+    font-size:26px;
+    margin-bottom:25px;
+    border-left:3px solid var(--accent);
+    padding-left:12px;
+}
+
+/* cards */
+
+.card{
+    display:block;
+    padding:18px 22px;
+    margin:14px 0;
+    background:var(--card);
+    border-radius:14px;
+    text-decoration:none;
+    color:var(--text);
+    border:1px solid transparent;
+    backdrop-filter: blur(10px);
+    transition:.25s ease;
+    position:relative;
+    overflow:hidden;
+}
+
+/* glow hover */
+
+.card::before{
+    content:'';
+    position:absolute;
+    inset:0;
+    background:linear-gradient(120deg, transparent, var(--accent-soft), transparent);
+    opacity:0;
+    transition:.3s;
+}
+
+.card:hover::before{
+    opacity:1;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+    border:1px solid var(--border);
+    box-shadow:0 0 18px rgba(0,224,255,.25);
+}
+
+/* back button */
+
+.back{
+    display:inline-block;
+    margin-bottom:30px;
+    text-decoration:none;
+    color:var(--accent);
+    font-size:14px;
+    opacity:.8;
+}
+
+.back:hover{
+    opacity:1;
+}
+
+.footer{
+    text-align:center;
+    margin-top:80px;
+    opacity:.5;
+    font-size:14px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<a class="back" href="index.html">← Back to Home</a>
+
+<div class="title">
+<h1>Event Registrations</h1>
+<p>Select an event or workshop to register</p>
+</div>
+
+
+<!-- COMPETITIONS -->
+<div class="section">
+<h2>Competitions</h2>
+
+<a class="card" href="PUT_INQUEST_LINK">Inquest</a>
+<a class="card" href="PUT_ATHLON_LINK">Athlon</a>
+<a class="card" href="PUT_PITCHDECK_LINK">Pitch Deck</a>
+<a class="card" href="PUT_THINKSTROM_LINK">Thinkstrom</a>
+<a class="card" href="PUT_ALGORAND_LINK">Algorand Hackathon</a>
+
+</div>
+
+
+<!-- WORKSHOPS -->
+<div class="section">
+<h2>Workshops</h2>
+
+<a class="card" href="PUT_ARVR_LINK">AR/VR Workshop</a>
+<a class="card" href="PUT_DRONE_LINK">Drone Workshop</a>
+
+</div>
+
+
+<!-- RESOURCES -->
+<div class="section">
+<h2>Resources</h2>
+
+<a class="card" href="PUT_BROCHURE_LINK">Brochure</a>
+<a class="card" href="PUT_RULEBOOK_LINK">Rulebook</a>
+<a class="card" href="PUT_ITINERARY_LINK">Itinerary</a>
+<a class="card" href="https://instagram.com/YOUR_INSTAGRAM">Instagram</a>
+
+</div>
+
+<div class="footer">
+Anveshan 2026
+</div>
+
+</div>
+
+</body>
+</html>
