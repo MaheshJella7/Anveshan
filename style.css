@@ -1,60 +1,129 @@
-/* EXTENSION TO PREVIOUS STYLE.CSS */
+:root {
+    --cyan: #00f0ff;
+    --pink: #ff0055;
+    --bg: #030305;
+    --glass: rgba(255, 255, 255, 0.04);
+    --border: rgba(255, 255, 255, 0.1);
+}
 
-.title-flex {
+* { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+
+body {
+    background-color: var(--bg);
+    color: #fff;
+    font-family: 'Rajdhani', sans-serif;
+    min-height: 100vh;
     display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 8px;
-}
-
-.title-flex h2 {
-    font-family: 'Orbitron';
-    font-size: 1.1rem;
-    letter-spacing: 2px;
-}
-
-.accent-line {
-    height: 2px;
-    width: 60px;
-    margin-bottom: 20px;
-}
-.accent-line.pink { background: var(--pink); box-shadow: 0 0 10px var(--pink); }
-.accent-line.cyan { background: var(--cyan); box-shadow: 0 0 10px var(--cyan); }
-
-/* GRID ITEM REFINEMENT */
-.grid-item {
-    display: flex;
-    flex-direction: column;
     justify-content: center;
-    align-items: center;
-    padding: 20px 10px;
-    gap: 4px;
+    overflow-x: hidden;
 }
 
-.item-name {
-    display: block;
-    font-size: 0.85rem;
-    letter-spacing: 1px;
+.container {
+    width: 100%;
+    max-width: 480px;
+    padding: 50px 24px;
+    z-index: 5;
 }
 
-.item-tag {
-    display: block;
-    font-size: 0.55rem;
-    font-family: 'Rajdhani';
-    font-weight: 500;
-    opacity: 0.6;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+/* --- LOGO FIX --- */
+.logo-frame {
+    position: relative;
+    width: 90px;
+    height: 90px;
+    margin: 0 auto 20px;
+}
+.main-logo {
+    width: 100%; height: 100%;
+    border-radius: 50%;
+    border: 2px solid var(--cyan);
+    padding: 6px;
+    object-fit: cover;
+}
+.ring-orbit {
+    position: absolute; top: -8px; left: -8px; width: 102px; height: 102px;
+    border: 1px dashed var(--cyan);
+    border-radius: 50%;
+    animation: spin 12s linear infinite;
+    opacity: 0.5;
 }
 
-/* Force two columns even on small mobile, but handle span */
-.grid-layout {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
+/* --- TEXT STYLES --- */
+.main-header { text-align: center; margin-bottom: 40px; }
+.glitch-text {
+    font-family: 'Orbitron'; font-size: 2.2rem; font-weight: 900;
+    letter-spacing: 5px; color: #fff; margin-bottom: 6px;
 }
+.tagline { font-size: 0.75rem; letter-spacing: 4px; color: var(--cyan); font-weight: 700; }
+.text-cyan { color: var(--cyan); }
+.text-pink { color: var(--pink); }
 
-@media (max-width: 400px) {
-    .item-name { font-size: 0.75rem; }
-    .item-tag { font-size: 0.5rem; }
+/* --- SOCIALS --- */
+.social-grid { display: flex; justify-content: center; gap: 15px; margin-bottom: 40px; }
+.social-btn {
+    width: 52px; height: 52px;
+    background: var(--glass);
+    border: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: center;
+    color: #fff; transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
+.social-btn:hover { border-color: var(--cyan); color: var(--cyan); transform: scale(1.1) translateY(-3px); }
+
+/* --- BUTTONS --- */
+.nav-stack { display: flex; flex-direction: column; gap: 14px; }
+
+.primary-btn {
+    background: linear-gradient(90deg, var(--cyan), #0099ff);
+    color: #000; text-decoration: none; padding: 22px;
+    display: flex; justify-content: space-between; align-items: center;
+    font-family: 'Orbitron'; font-weight: 900;
+    clip-path: polygon(0 0, 100% 0, 96% 100%, 4% 100%);
+    transition: 0.3s;
+}
+.primary-btn:active { transform: scale(0.97); }
+.btn-title { display: block; font-size: 1rem; }
+.btn-desc { display: block; font-size: 0.65rem; font-family: 'Rajdhani'; font-weight: 500; opacity: 0.8; }
+
+.secondary-btn {
+    background: var(--glass);
+    border: 1px solid var(--border);
+    color: #fff; text-decoration: none; padding: 18px;
+    display: flex; align-items: center; gap: 16px;
+    font-weight: 700; font-family: 'Orbitron'; font-size: 0.85rem;
+    transition: 0.3s;
+}
+.secondary-btn:hover { background: rgba(255,255,255,0.06); border-color: var(--cyan); padding-left: 24px; }
+
+/* --- GRID SYSTEM --- */
+.matrix-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.matrix-item {
+    background: var(--glass); border: 1px solid var(--border);
+    padding: 22px 10px; text-align: center; color: #fff;
+    text-decoration: none; display: flex; flex-direction: column; gap: 4px;
+    transition: 0.2s;
+}
+.matrix-item:hover { border-color: var(--pink); color: var(--pink); transform: translateY(-2px); }
+.m-title { font-family: 'Orbitron'; font-size: 0.8rem; font-weight: 700; letter-spacing: 1px; }
+.m-tag { font-size: 0.55rem; opacity: 0.5; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; }
+.span-full { grid-column: span 2; }
+.locked { opacity: 0.3; pointer-events: none; }
+
+/* --- UTILS --- */
+.h-line { height: 2px; width: 50px; margin-top: 8px; }
+.h-line.pink { background: var(--pink); box-shadow: 0 0 10px var(--pink); }
+.h-line.cyan { background: var(--cyan); box-shadow: 0 0 10px var(--cyan); }
+.back-nav { display: flex; align-items: center; gap: 8px; color: var(--cyan); text-decoration: none; font-weight: 700; margin-bottom: 30px; font-family: 'Orbitron'; font-size: 0.8rem; }
+
+/* --- ANIMATIONS --- */
+@keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.reveal { opacity: 0; animation: fadeInUp 0.7s cubic-bezier(0.2, 1, 0.3, 1) forwards; }
+
+.noise-overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: url('https://grainy-gradients.vercel.app/noise.svg');
+    opacity: 0.06; pointer-events: none; z-index: 10;
+}
+#stars { position: fixed; top: 0; left: 0; z-index: -1; }
