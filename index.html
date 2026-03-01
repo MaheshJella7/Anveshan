@@ -5,65 +5,53 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Anveshan 2026</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<!-- LOADER -->
+<!-- Loader -->
 <div id="loader">
-    <div class="loader-text glitch">ANVESHAN 2026</div>
+  <div class="loader-text">ANVESHAN 2026</div>
 </div>
 
-<!-- STAR CANVAS -->
+<!-- Star Background -->
 <canvas id="stars"></canvas>
 
+<!-- Parallax Layers -->
+<div class="parallax back"></div>
+<div class="parallax mid"></div>
+
 <!-- HERO -->
-<div class="hero-card glass fade-in">
+<section class="hero glass reveal">
 
-    <img src="assets/logo.png" class="logo" alt="Anveshan Logo">
+  <img src="assets/logo.png" class="logo" alt="Logo">
 
-    <h1 class="glitch">ANVESHAN 2026</h1>
+  <h1>ANVESHAN 2026</h1>
 
-    <p class="desc">
-        The Annual Techno-Cultural Festival<br>
-        of Symbiosis Institute of Technology, Hyderabad
-    </p>
+  <p class="subtitle">
+    The Annual Techno-Cultural Festival<br>
+    Symbiosis Institute of Technology, Hyderabad
+  </p>
 
-    <div class="socials">
-        <a href="https://www.instagram.com/anveshan_2026" target="_blank">
-            <i class="fa-brands fa-instagram"></i>
-        </a>
-        <a href="https://www.linkedin.com/company/anveshan-2025/about/" target="_blank">
-            <i class="fa-brands fa-linkedin"></i>
-        </a>
-        <a href="https://sricharan1626.github.io/ANVESHAN/" target="_blank" class="site-link">
-            <i class="fa-solid fa-globe"></i>
-        </a>
-    </div>
+  <div id="countdown" class="countdown"></div>
 
-</div>
+</section>
 
-<div class="content-grid fade-in">
+<!-- LINKS -->
+<section class="links glass reveal">
 
-<div class="links-card glass">
+  <h2>Explore</h2>
 
-    <h2>Explore</h2>
+  <a href="register.html" class="btn">Event Registration</a>
+  <a href="assets/Anveshan_Brochure.pdf" target="_blank" class="btn">Brochure</a>
+  <a href="assets/Anveshan_Rulebook.pdf" target="_blank" class="btn">Rulebook</a>
+  <a href="assets/Anveshan_Schedule.pdf" target="_blank" class="btn">Itinerary</a>
 
-    <a href="register.html" class="btn">Event Registration</a>
-    <a href="assets/Anveshan_Brochure.pdf" target="_blank" class="btn">Brochure</a>
-    <a href="assets/Anveshan_Rulebook.pdf" target="_blank" class="btn">Rulebook</a>
-    <a href="assets/Anveshan_Schedule.pdf" target="_blank" class="btn">Itinerary</a>
+</section>
 
-</div>
-
-</div>
-
-<audio id="hoverSound" src="assets/hover.mp3" preload="auto"></audio>
-
-<script src="effects.js"></script>
+<script src="script.js"></script>
 
 </body>
 </html>
