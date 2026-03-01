@@ -1,7 +1,6 @@
-// Initialize Lucide Icons
 lucide.createIcons();
 
-// Starfield Generator
+// Optimized Starfield
 const canvas = document.getElementById("stars");
 const ctx = canvas.getContext("2d");
 let stars = [];
@@ -13,39 +12,31 @@ function resize() {
 window.addEventListener('resize', resize);
 resize();
 
-for(let i=0; i<150; i++) {
+for(let i=0; i<80; i++) { // Fewer stars for better mobile performance
     stars.push({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
-        size: Math.random() * 1.5,
-        speed: Math.random() * 0.5 + 0.2
+        s: Math.random() * 0.5
     });
 }
 
-function drawStars() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.fillStyle = "white";
-    stars.forEach(s => {
+function draw() {
+    ctx.clearRect(0,0,canvas.width, canvas.height);
+    ctx.fillStyle = "rgba(255,255,255,0.5)";
+    stars.forEach(star => {
         ctx.beginPath();
-        ctx.arc(s.x, s.y, s.size, 0, Math.PI * 2);
+        ctx.arc(star.x, star.y, 1, 0, Math.PI*2);
         ctx.fill();
-        s.y += s.speed;
-        if(s.y > canvas.height) s.y = 0;
+        star.y += star.s;
+        if(star.y > canvas.height) star.y = 0;
     });
-    requestAnimationFrame(drawStars);
+    requestAnimationFrame(draw);
 }
-drawStars();
+draw();
 
-// 3D Tilt Effect
-document.addEventListener("mousemove", (e) => {
-    const panels = document.querySelectorAll(".hud-panel");
-    const x = (window.innerWidth / 2 - e.pageX) / 25;
-    const y = (window.innerHeight / 2 - e.pageY) / 25;
-    
-    panels.forEach(p => {
-        p.style.transform = `rotateY(${-x}deg) rotateX(${y}deg)`;
+// Smooth feedback on tap
+document.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+        if(window.navigator.vibrate) window.navigator.vibrate(10);
     });
 });
-
-// Sound simulation (Console log for fun)
-console.log("%c ANVESHAN 2026: Systems Nominal ", "background: #00f0ff; color: #000; font-weight: bold;");
