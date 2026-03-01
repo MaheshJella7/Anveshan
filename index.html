@@ -5,8 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Anveshan 2026</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 <link rel="stylesheet" href="style.css">
 </head>
 
@@ -14,41 +15,41 @@
 
 <!-- LOADER -->
 <div id="loader">
-    <div class="loader-text glitch">ANVESHAN 2026</div>
+    <div class="loader-text">ANVESHAN 2026</div>
 </div>
 
 <!-- STAR CANVAS -->
 <canvas id="stars"></canvas>
 
+<!-- PARALLAX LAYERS -->
+<div class="parallax back"></div>
+<div class="parallax mid"></div>
+
 <!-- HERO -->
-<div class="hero-card glass fade-in">
+<section class="hero glass reveal">
 
     <img src="assets/logo.png" class="logo" alt="Anveshan Logo">
 
-    <h1 class="glitch">ANVESHAN 2026</h1>
+    <h1 class="glitch" data-text="ANVESHAN 2026">
+        ANVESHAN 2026
+    </h1>
 
-    <p class="desc">
+    <p class="subtitle">
         The Annual Techno-Cultural Festival<br>
-        of Symbiosis Institute of Technology, Hyderabad
+        Symbiosis Institute of Technology, Hyderabad
     </p>
 
+    <div id="countdown" class="countdown"></div>
+
     <div class="socials">
-        <a href="https://www.instagram.com/anveshan_2026" target="_blank">
-            <i class="fa-brands fa-instagram"></i>
-        </a>
-        <a href="https://www.linkedin.com/company/anveshan-2025/about/" target="_blank">
-            <i class="fa-brands fa-linkedin"></i>
-        </a>
-        <a href="https://sricharan1626.github.io/ANVESHAN/" target="_blank" class="site-link">
-            <i class="fa-solid fa-globe"></i>
-        </a>
+        <a href="https://www.instagram.com/anveshan_2026" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.linkedin.com/company/anveshan-2025/about/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="https://sricharan1626.github.io/ANVESHAN/" target="_blank"><i class="fa-solid fa-globe"></i></a>
     </div>
 
-</div>
+</section>
 
-<div class="content-grid fade-in">
-
-<div class="links-card glass">
+<section class="links glass reveal">
 
     <h2>Explore</h2>
 
@@ -57,11 +58,9 @@
     <a href="assets/Anveshan_Rulebook.pdf" target="_blank" class="btn">Rulebook</a>
     <a href="assets/Anveshan_Schedule.pdf" target="_blank" class="btn">Itinerary</a>
 
-</div>
+</section>
 
-</div>
-
-<audio id="hoverSound" src="assets/hover.mp3" preload="auto"></audio>
+<audio id="hoverSound" src="assets/hover.mp3"></audio>
 
 <script src="effects.js"></script>
 
