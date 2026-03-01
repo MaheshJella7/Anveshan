@@ -1,86 +1,51 @@
-/* Starfield */
-const canvas=document.getElementById("stars");
-const ctx=canvas.getContext("2d");
-canvas.width=window.innerWidth;
-canvas.height=window.innerHeight;
+// Initialize Lucide Icons
+lucide.createIcons();
 
-let stars=[];
-for(let i=0;i<120;i++){
-stars.push({
-x:Math.random()*canvas.width,
-y:Math.random()*canvas.height,
-r:Math.random()*1.5,
-s:Math.random()*0.6
-});
+// Starfield Generator
+const canvas = document.getElementById("stars");
+const ctx = canvas.getContext("2d");
+let stars = [];
+
+function resize() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+}
+window.addEventListener('resize', resize);
+resize();
+
+for(let i=0; i<150; i++) {
+    stars.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        size: Math.random() * 1.5,
+        speed: Math.random() * 0.5 + 0.2
+    });
 }
 
-function animate(){
-ctx.clearRect(0,0,canvas.width,canvas.height);
-ctx.fillStyle="white";
-stars.forEach(star=>{
-star.y+=star.s;
-if(star.y>canvas.height){
-star.y=0;
-star.x=Math.random()*canvas.width;
+function drawStars() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = "white";
+    stars.forEach(s => {
+        ctx.beginPath();
+        ctx.arc(s.x, s.y, s.size, 0, Math.PI * 2);
+        ctx.fill();
+        s.y += s.speed;
+        if(s.y > canvas.height) s.y = 0;
+    });
+    requestAnimationFrame(drawStars);
 }
-ctx.beginPath();
-ctx.arc(star.x,star.y,star.r,0,Math.PI*2);
-ctx.fill();
-});
-requestAnimationFrame(animate);
-}
-animate();
+drawStars();
 
-/* Resize */
-window.addEventListener("resize",()=>{
-canvas.width=window.innerWidth;
-canvas.height=window.innerHeight;
-});
-
-/* Loader */
-window.addEventListener("load",()=>{
-document.body.classList.add("loaded");
-setTimeout(()=>{
-document.getElementById("loader").style.display="none";
-},1200);
+// 3D Tilt Effect
+document.addEventListener("mousemove", (e) => {
+    const panels = document.querySelectorAll(".hud-panel");
+    const x = (window.innerWidth / 2 - e.pageX) / 25;
+    const y = (window.innerHeight / 2 - e.pageY) / 25;
+    
+    panels.forEach(p => {
+        p.style.transform = `rotateY(${-x}deg) rotateX(${y}deg)`;
+    });
 });
 
-/* Countdown */
-const eventDate=new Date("March 15, 2026 00:00:00").getTime();
-setInterval(()=>{
-const now=new Date().getTime();
-const distance=eventDate-now;
-const d=Math.floor(distance/(1000*60*60*24));
-const h=Math.floor((distance%(1000*60*60*24))/(1000*60*60));
-const m=Math.floor((distance%(1000*60*60))/(1000*60));
-document.getElementById("countdown").innerHTML=`${d}D ${h}H ${m}M`;
-},1000);
-
-/* Scroll Reveal */
-const reveals=document.querySelectorAll(".reveal");
-function revealOnScroll(){
-reveals.forEach(el=>{
-if(el.getBoundingClientRect().top < window.innerHeight-100){
-el.classList.add("active");
-}
-});
-}
-window.addEventListener("scroll",revealOnScroll);
-
-/* Parallax */
-document.addEventListener("mousemove",(e)=>{
-const x=(e.clientX/window.innerWidth-0.5)*20;
-const y=(e.clientY/window.innerHeight-0.5)*20;
-document.querySelector(".back").style.transform=`translate(${x}px,${y}px)`;
-document.querySelector(".mid").style.transform=`translate(${x*1.5}px,${y*1.5}px)`;
-});
-
-/* Mouse Glow */
-document.addEventListener("mousemove",e=>{
-const dot=document.createElement("div");
-dot.className="trail";
-dot.style.left=e.pageX+"px";
-dot.style.top=e.pageY+"px";
-document.body.appendChild(dot);
-setTimeout(()=>dot.remove(),250);
-});
+// Sound simulation (Console log for fun)
+console.log("%c ANVESHAN 2026: Systems Nominal ", "background: #00f0ff; color: #000; font-weight: bold;");
