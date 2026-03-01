@@ -1,3 +1,4 @@
+// Initialize Lucide Icons
 lucide.createIcons();
 
 // Optimized Starfield
@@ -12,20 +13,22 @@ function resize() {
 window.addEventListener('resize', resize);
 resize();
 
-for(let i=0; i<80; i++) { // Fewer stars for better mobile performance
+// Reduced star count for better mobile CPU performance
+for(let i=0; i<60; i++) {
     stars.push({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
-        s: Math.random() * 0.5
+        s: Math.random() * 0.4 + 0.1,
+        o: Math.random()
     });
 }
 
 function draw() {
-    ctx.clearRect(0,0,canvas.width, canvas.height);
-    ctx.fillStyle = "rgba(255,255,255,0.5)";
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
     stars.forEach(star => {
+        ctx.fillStyle = `rgba(255, 255, 255, ${star.o})`;
         ctx.beginPath();
-        ctx.arc(star.x, star.y, 1, 0, Math.PI*2);
+        ctx.arc(star.x, star.y, 0.8, 0, Math.PI * 2);
         ctx.fill();
         star.y += star.s;
         if(star.y > canvas.height) star.y = 0;
@@ -34,9 +37,12 @@ function draw() {
 }
 draw();
 
-// Smooth feedback on tap
+// Smooth tap feedback
 document.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-        if(window.navigator.vibrate) window.navigator.vibrate(10);
+    link.addEventListener('touchstart', function() {
+        this.style.opacity = "0.7";
+    });
+    link.addEventListener('touchend', function() {
+        this.style.opacity = "1";
     });
 });
