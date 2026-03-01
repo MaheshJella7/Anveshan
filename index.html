@@ -6,20 +6,26 @@
 <title>Anveshan 2026</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;800&display=swap" rel="stylesheet">
-
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+
+<!-- LOADER -->
+<div id="loader">
+    <div class="loader-text glitch">ANVESHAN 2026</div>
+</div>
+
+<!-- STAR CANVAS -->
 <canvas id="stars"></canvas>
-<div class="hero-card glass">
+
+<!-- HERO -->
+<div class="hero-card glass fade-in">
 
     <img src="assets/logo.png" class="logo" alt="Anveshan Logo">
 
-    <h1>ANVESHAN 2026</h1>
+    <h1 class="glitch">ANVESHAN 2026</h1>
 
     <p class="desc">
         The Annual Techno-Cultural Festival<br>
@@ -30,11 +36,9 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
         <a href="https://www.instagram.com/anveshan_2026" target="_blank">
             <i class="fa-brands fa-instagram"></i>
         </a>
-
         <a href="https://www.linkedin.com/company/anveshan-2025/about/" target="_blank">
             <i class="fa-brands fa-linkedin"></i>
         </a>
-
         <a href="https://sricharan1626.github.io/ANVESHAN/" target="_blank" class="site-link">
             <i class="fa-solid fa-globe"></i>
         </a>
@@ -42,21 +46,24 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
 
 </div>
 
-<div class="content-grid">
+<div class="content-grid fade-in">
 
 <div class="links-card glass">
+
     <h2>Explore</h2>
 
     <a href="register.html" class="btn">Event Registration</a>
-
     <a href="assets/Anveshan_Brochure.pdf" target="_blank" class="btn">Brochure</a>
-
     <a href="assets/Anveshan_Rulebook.pdf" target="_blank" class="btn">Rulebook</a>
-
     <a href="assets/Anveshan_Schedule.pdf" target="_blank" class="btn">Itinerary</a>
+
 </div>
 
 </div>
+
+<audio id="hoverSound" src="assets/hover.mp3" preload="auto"></audio>
+
+<script src="effects.js"></script>
 
 </body>
 </html>
