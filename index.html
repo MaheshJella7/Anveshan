@@ -3,61 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anveshan 2026 | Mission Control</title>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;500;700&display=swap" rel="stylesheet">
+    <title>Anveshan 2026 | Portal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="scanlines"></div>
+    <div class="noise-overlay"></div>
     <canvas id="stars"></canvas>
-    
-    <div class="status-bar">
-        <span class="pulse">●</span> SYSTEM_READY // SECTOR_HYD
+
+    <div class="container">
+        <header class="main-header reveal">
+            <div class="logo-wrapper">
+                <img src="assets/logo.png" alt="Logo" class="main-logo">
+                <div class="logo-ring"></div>
+            </div>
+            <div class="title-block">
+                <h1 class="glitch-text" data-text="ANVESHAN">ANVESHAN</h1>
+                <p class="subtitle">SIT HYDERABAD // 2026</p>
+            </div>
+        </header>
+
+        <div class="social-row reveal" style="animation-delay: 0.2s;">
+            <a href="https://instagram.com/anveshan_2026" class="social-box"><i data-lucide="instagram"></i></a>
+            <a href="https://linkedin.com/company/anveshan" class="social-box"><i data-lucide="linkedin"></i></a>
+            <a href="https://sricharan1626.github.io/ANVESHAN/" class="social-box"><i data-lucide="globe"></i></a>
+        </div>
+
+        <nav class="link-stack">
+            <a href="register.html" class="mega-btn reveal" style="animation-delay: 0.4s;">
+                <span class="btn-info">
+                    <span class="btn-label">EVENT REGISTRATION</span>
+                    <span class="btn-sub">Initialize your mission</span>
+                </span>
+                <i data-lucide="arrow-right"></i>
+            </a>
+            
+            <a href="assets/Anveshan_Brochure.pdf" class="standard-btn reveal" style="animation-delay: 0.5s;">
+                <i data-lucide="file-text"></i> MISSION BROCHURE
+            </a>
+            
+            <a href="assets/Anveshan_Rulebook.pdf" class="standard-btn reveal" style="animation-delay: 0.6s;">
+                <i data-lucide="shield"></i> PROTOCOL RULEBOOK
+            </a>
+            
+            <a href="assets/Anveshan_Schedule.pdf" class="standard-btn reveal" style="animation-delay: 0.7s;">
+                <i data-lucide="calendar"></i> FEST ITINERARY
+            </a>
+        </nav>
+
+        <footer class="system-footer reveal" style="animation-delay: 0.9s;">
+            <div class="line"></div>
+            <span>STATUS: SYSTEMS_NOMINAL</span>
+        </footer>
     </div>
-
-    <main class="hero-card hud-panel reveal">
-        <div class="hud-corner tl"></div><div class="hud-corner tr"></div>
-        <div class="hud-corner bl"></div><div class="hud-corner br"></div>
-        
-        <div class="logo-outer">
-            <img src="assets/logo.png" class="logo" alt="Logo">
-        </div>
-
-        <div class="glitch-wrapper">
-            <h1 class="glitch" data-text="ANVESHAN">ANVESHAN</h1>
-            <p class="sub-glitch">TECH-ROCK SINGULARITY 2026</p>
-        </div>
-
-        <div class="socials">
-            <a href="https://www.instagram.com/anveshan_2026" class="nav-icon-btn"><i data-lucide="instagram"></i></a>
-            <a href="https://www.linkedin.com/company/anveshan-2025/" class="nav-icon-btn"><i data-lucide="linkedin"></i></a>
-            <a href="https://sricharan1626.github.io/ANVESHAN/" class="nav-icon-btn site-link"><i data-lucide="globe"></i></a>
-        </div>
-
-        <div class="links-container">
-            <a href="register.html" class="neon-btn">
-                <span class="btn-text">INITIALIZE REGISTRATION</span>
-                <i data-lucide="rocket"></i>
-            </a>
-            <a href="assets/Anveshan_Brochure.pdf" class="neon-btn alt">
-                <span class="btn-text">MISSION INTEL [BROCHURE]</span>
-                <i data-lucide="file-text"></i>
-            </a>
-            <a href="assets/Anveshan_Rulebook.pdf" class="neon-btn alt">
-                <span class="btn-text">PROTOCOL [RULEBOOK]</span>
-                <i data-lucide="shield-check"></i>
-            </a>
-            <a href="assets/Anveshan_Schedule.pdf" class="neon-btn alt">
-                <span class="btn-text">TIMELINE [SCHEDULE]</span>
-                <i data-lucide="clock"></i>
-            </a>
-        </div>
-    </main>
-
-    <footer class="footer-hud">
-        COORD: 17.3850° N, 78.4867° E // ANVESHAN_V2.0
-    </footer>
 
     <script src="effects.js"></script>
 </body>
