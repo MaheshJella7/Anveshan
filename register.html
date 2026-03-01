@@ -3,49 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anveshan | Sector Selection</title>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;500;700&display=swap" rel="stylesheet">
+    <title>Anveshan | Registration</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="sub-page">
-    <div class="scanlines"></div>
+    <div class="noise-overlay"></div>
     <canvas id="stars"></canvas>
 
-    <a href="index.html" class="back-link">
-        <i data-lucide="chevron-left"></i> RETURN_TO_DASHBOARD
-    </a>
+    <div class="container">
+        <a href="index.html" class="nav-back"><i data-lucide="chevron-left"></i> DASHBOARD</a>
 
-    <div class="registration-grid">
-        <section class="hud-panel list-panel reveal">
-            <div class="panel-header text-pink">
-                <i data-lucide="zap"></i>
-                <h2>COMPETITIVE_ARENA</h2>
-            </div>
-            <div class="scroll-links">
-                <a class="list-btn" href="LINK">ATHLEON 2026 <span class="status">ACTIVE</span></a>
-                <a class="list-btn" href="LINK">TAALVERSE <span class="status">ACTIVE</span></a>
-                <a class="list-btn" href="LINK">INQUEST EXPO <span class="status">ACTIVE</span></a>
-                <a class="list-btn" href="LINK">POSTER BATTLE <span class="status">ACTIVE</span></a>
-                <a class="list-btn" href="LINK">PITCH DECK <span class="status">ACTIVE</span></a>
-                <a class="list-btn" href="LINK">THINKSTROM <span class="status">ACTIVE</span></a>
-                <a class="list-btn" href="LINK">NEXATHON 24HR <span class="status">ACTIVE</span></a>
-                <a class="list-btn" href="LINK">BLAZE ESPORTS <span class="status">ACTIVE</span></a>
-                <a class="list-btn" href="LINK">NEON PARTY <span class="status">ACTIVE</span></a>
-            </div>
-        </section>
+        <div class="section-title reveal">
+            <h2>COMPETITIONS</h2>
+            <div class="accent-line"></div>
+        </div>
 
-        <section class="hud-panel list-panel reveal" style="animation-delay: 0.2s;">
-            <div class="panel-header text-cyan">
-                <i data-lucide="cpu"></i>
-                <h2>SKILL_WORKSHOPS</h2>
-            </div>
-            <div class="scroll-links">
-                <a class="list-btn locked" href="#">REALITY FORGE <span class="status">LOCKED</span></a>
-                <a class="list-btn" href="LINK">DRONE WORKSHOP <span class="status">ACTIVE</span></a>
-                <a class="list-btn" href="LINK">POTTERY WORKSHOP <span class="status">ACTIVE</span></a>
-            </div>
-        </section>
+        <div class="grid-layout">
+            <a href="LINK" class="grid-item reveal" style="animation-delay: 0.1s;">ATHLEON 2026</a>
+            <a href="LINK" class="grid-item reveal" style="animation-delay: 0.2s;">TAALVERSE</a>
+            <a href="LINK" class="grid-item reveal" style="animation-delay: 0.3s;">INQUEST EXPO</a>
+            <a href="LINK" class="grid-item reveal" style="animation-delay: 0.4s;">PITCH DECK</a>
+            <a href="LINK" class="grid-item reveal" style="animation-delay: 0.5s;">THINKSTROM</a>
+            <a href="LINK" class="grid-item reveal" style="animation-delay: 0.6s;">NEXATHON</a>
+        </div>
+
+        <div class="section-title reveal" style="margin-top: 40px;">
+            <h2>WORKSHOPS</h2>
+            <div class="accent-line"></div>
+        </div>
+
+        <div class="grid-layout">
+            <a href="#" class="grid-item locked">REALITY FORGE (CLOSED)</a>
+            <a href="LINK" class="grid-item reveal">DRONE WORKSHOP</a>
+            <a href="LINK" class="grid-item reveal">POTTERY WORKSHOP</a>
+        </div>
     </div>
 
     <script src="effects.js"></script>
